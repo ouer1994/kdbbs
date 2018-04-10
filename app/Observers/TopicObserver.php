@@ -22,6 +22,8 @@ class TopicObserver
     // 创建新对象, 使用save()更新时会触发
     public function saving(Topic $topic)
     {
+        $topic->body = clean($topic->body, 'default');
+
         $topic->excerpt = make_excerpt($topic->body);
     }
 }

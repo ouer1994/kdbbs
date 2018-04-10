@@ -41,6 +41,7 @@
                     </div>
 
                     <div class="topic-body">
+                        {{--这种形式不会调用 htmlspecialchars()函数来避免 XSS 攻击--}}
                         {!! $topic->body !!}
                     </div>
 
