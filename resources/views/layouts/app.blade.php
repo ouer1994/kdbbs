@@ -9,6 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>@yield('title', 'KDBBS') - Laravel 进阶教程</title>
+    <meta name="description" content="@yield('description', "KDBBS")">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
