@@ -1,5 +1,6 @@
 <?php
 
+// 或者直接在 composer.json 文件中使用 autoload files 引入
 require_once __DIR__ . '/helpers.php';
 
 /*
