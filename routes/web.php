@@ -28,3 +28,5 @@ $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail'
 $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 $this->post('password/reset', 'Auth\ResetPasswordController@reset');
 
+// UsersController
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
