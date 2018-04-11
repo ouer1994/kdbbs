@@ -41,7 +41,7 @@
                     </div>
 
                     <div class="topic-body">
-                        {{--这种形式不会调用 htmlspecialchars()函数来避免 XSS 攻击--}}
+                        {{--这种形式不会调用 htmlspecialchars()函数来避免 XSS 攻击, 意味着非转义打印数据，这是一个安全隐患--}}
                         {!! $topic->body !!}
                     </div>
 
@@ -57,6 +57,14 @@
                             </a>
                         </div>
                     @endcan
+                </div>
+            </div>
+
+            {{-- 用户回复列表 --}}
+            <div class="panel panel-default topic-reply">
+                <div class="panel-body">
+                    @include('topics._reply_box', ['topic' => $topic])
+                    @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
                 </div>
             </div>
         </div>
